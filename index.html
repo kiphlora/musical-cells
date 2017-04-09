@@ -32,6 +32,7 @@
 
 		<div id="vis1" class="interactive">
 			<div class="wrapper">
+				<svg></svg>
 				<!-- <iframe src="" frameborder="0"></iframe> -->
 			</div>
 		</div>
@@ -49,215 +50,162 @@
 		</div>
 
 		<div id="vis2" class="interactive">
-			<div class="wrapper"><svg></svg></div>
+			<div class="wrapper">
+				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
+			</div>
 		</div>
 
 		<div class="section">
 			<h3>
-				2. They evolve.
 			</h3>
 			<p>
-			</p>
-			<!-- <p>
-				Similar to social situations in the real world, interactions in CA universes are governed by laws, which they call rules. However, unlike our own rules, theirs are comprehensive and inflexible; all cells behave exactly the same way in each situation. Since there are eight social situations and the cell has two states to choose from for each of those situations, there are 256 different rules that the cells can follow.
-			</p>
+			</p>			
 			<p>
-				
-			</p> -->
-
-			<p>
-				Each cell uses information available to it in the <span class="notes">current step</span> to calculate its state for the <span class="notes">next step</span>. 
 			</p>
 			<div>
 				
 			</div>
 				<p>
-					In order to better see and understand this discrete stepping concept, press the "Start" button in the interactive below. The cells will transition to the next step each second for twenty seconds.
 				</p>
 				
 			</div>
 		
-		<div id="discrete-time-single-row" class="interactive">
+		<div id="vis3" class="interactive">
 			<div class="wrapper">
-				<button id="discrete-time-single-row-button" class="sc-button">Start</button>
+				<button id="button3" class="sc-button">Start</button>
 				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
 			</div>
 		</div>
 		
 		<div class="section">
 			<p>
-				The flashes of green and gray look interesting, but it's hard to tell what kind of pattern (if any) is forming. To solve this problem, we typically display all of the steps we've run at the same time. Below, you'll find the same CA as above, but this time, we're displaying each step as a new row, moving downward over time.
 			</p>
 			<p>
-				Press the "Start" button to see the pattern unfold.
 			</p>
 		</div>
 
-		<div id="state-time-grid-animated" class="interactive">
+		<div id="vis4" class="interactive">
 			<div class="wrapper">
-				<button id="state-time-grid-anim-button" class="sc-button">Start</button>
+				<button id="button4" class="sc-button">Start</button>
 				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
 			</div>
 		</div>
 
 		<div class="section">
 			<h3>
-				3. They are social.
 			</h3>
 			<p>
-				The cells are part of a network. Each cell is connected to the cells directly to the left and right of it. The three cells, togther, form a local <span class="notes">neighborhood</span>. Below, you'll find an interactive that helps illustrate this concept.
 			</p>
 			<p>
-				Hover/Tap a cell to see its neighborhood. Note that the cells at the ends of the row are connected; the circular, network representation helps clarify this.
 			</p>
 		</div>
 	
-		<div id="explore-network" class="interactive">
-			<div class="wrapper"><svg></svg></div>
+		<div id="vis5" class="interactive">
+			<div class="wrapper">
+				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
+			</div>
 		</div>
 
 		<div class="section">
 			<p>	
-			  Much like in real life, cells chat with their friends and neighbors to help them make decisions. In each neighborhood, the center cell decides its next state by looking at the current states of its neighbors and itself. Since the neighborhood has three cells and each of those cells can have two possible states, there are a total of eight different combinations of cells. Let's call these combinations <span class="notes">social situations</span>.
 			</p>
 			<p>
-				How do the cells know how to behave in these social situations? Well, similar to social situations in the real world, interactions in CA universes are governed by laws, which they call <span class="notes">rules</span>. However, unlike our own rules, theirs are exhaustive and inflexible; all situations are codified and all cells behave exactly the same way in each situation. Since there are eight social situations in elementary CA and because the center cell can choose one of two states for each of those situations, there are 256 different rules that the cells can follow.
 			</p>
 			<p>
-				Below is an interactive that shows the eight possible social situations (Groups of three cells on top) and the rule (Single cells on the bottom) that tells the center cell what to do on the next iteration. The eight cells on the bottom correspond to one of the 256 possible rules that elementary CA can have. Further, since the states are binary, we can create a binary number using the states (with asleep being zero and awake being one). This <a href="http://www.wikihow.com/Convert-from-Binary-to-Decimal">binary string can then be converted to a decimal number</a> between 0 and 255.
 			</p>
 			<p>
-				Try clicking/tapping on the bottom cells to change the rules.
 			</p>
 		</div>
 
-		<div id="social-situations-and-rules" class="interactive">
-			<div class="wrapper"><svg></svg></div>
+		<div id="vis6" class="interactive">
+			<div class="wrapper">
+				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
+			</div>
 		</div>
 
 		<div class="section">
 			<p>
-				The last piece of the puzzle is to witness the changing of the states. Hover/Tap the cells in the interactive below to see how this transition works.
 			</p>
 		</div>
 
-		<div id="changing-of-the-states" class="interactive">
+		<div id="vis7" class="interactive">
 			<div class="wrapper">
-				<button id="randomize-states" class="sc-button">Randomize States</button>
+				<button id="button7" class="sc-button">Randomize States</button>
 				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
 			</div>
 		</div>
 	
 		<div class="section">
-			<p>Recapping, elementary cellular automata have two states, which we have called "asleep" and "awake" for this demonstration. They update their states over discrete steps (usually over time), by interacting with their neighbhors. And, sometimes, the rules they use to make these updating decisions result in some interesting emergent patterns. </p>
 			<p>
-				Below, you'll find a little sandbox where you can explore the 256 rules at your leisure.
+			</p>
+			<p>
 			</p>
 			<div class="sandbox-instructions">
 				<ul>
 					<li>
-						Changing the rules: 
 					</li>
 					<ul>
-						<li>Use the Choose Rule drop-down box to select a specific rule.</li>
-						<li>Click the Randomize rule button.</li>
 					</ul>
 					<li>
-						Toggle the Randomize Seeds button to randomly select cells to awaken (turn green). Note that the default is a single awakened (green) cell in the center of the first row. 
 					</li>
 					<li>
-						The Refresh button is used for re-running the CA simulation. This is most useful when the Randomize Seeds checkbox is selected, as this will generate new, random initial conditions.
 					</li>
 				</ul>
 			</div>
 			<p>
-				Most of all... Enjoy yourself and see what kinds of patterns you can find! 
 			</p>
 		</div>
 
-		<div id="ca-sandbox" class="interactive">
+		<div id="vis8" class="interactive">
 			<div class="wrapper">
 				<div id="sandbox-controls">
-					<button id="random-rule-button" class="sc-button">Random Rule</button>
-					<button id="check-box-button-random-seeds">Randomize Seeds</button>
-					<button id="refresh-button" class="sc-button">Refresh</button>
-					<div id="select-box">
+					<button id="button8" class="sc-button">Random Rule</button>
+					<button id="check-box-button8">Randomize Seeds</button>
+					<button id="button8-1" class="sc-button">Refresh</button>
+					<div id="select-box8">
 						<label>Choose Rule</label>
 						<select name="rules" id="select-rule"></select>
 					</div>
 				</div>
 				<svg></svg>
+				<!-- <iframe src="" frameborder="0"></iframe> -->
 			</div>
 		</div>
 
 		<div class="footer">
 			<p>Thanks so much for checking this out!</p>
-			<p>This interactive explanation is based on some of the research done by Stephen Wolfram in his book, <a href="http://www.wolframscience.com/nksonline/toc.html">A New Kind of Science</a>.</p>
-			<p>And was inspired by Nicky Case and Vi Hart's <a href="http://ncase.me/polygons/">Parable of the Polygons</a> and Bret Victor's <a href="http://worrydream.com/ExplorableExplanations/">Explorable Explanations</a>.</p>
+			<p>
+				This interactive explanation is based on some of the research done by Stephen Wolfram in his book, <a href="http://www.wolframscience.com/nksonline/toc.html">A New Kind of Science</a>.
+			</p>
+			<p>
+				And was inspired by Nicky Case and Vi Hart's <a href="http://ncase.me/polygons/">Parable of the Polygons</a> and Bret Victor's <a href="http://worrydream.com/ExplorableExplanations/">Explorable Explanations</a>.
+			</p>
 		</div>
 
 	</div>
 
 	<script>
 
-			var stateTimeGridDiv = d3.select("#state-time-grid").select(".wrapper");
-			var awakeasleepintroDiv = d3.select("#awake-asleep-intro").select(".wrapper");
-			var socialSituationsDiv = d3.select("#social-situations-and-rules").select(".wrapper");
-			var discreteTimeSingleRowDiv = d3.select("#discrete-time-single-row").select(".wrapper");
-			var stateTimeGridAnimDiv = d3.select("#state-time-grid-animated").select(".wrapper");
-			var exploreNetworkDiv = d3.select("#explore-network").select(".wrapper");
-			var changingOfTheStatesDiv = d3.select("#changing-of-the-states").select(".wrapper");
-			var sandboxDiv = d3.select("#ca-sandbox").select(".wrapper");
-
-			var divs = [stateTimeGridDiv, awakeasleepintroDiv, socialSituationsDiv, discreteTimeSingleRowDiv, stateTimeGridAnimDiv, exploreNetworkDiv, changingOfTheStatesDiv, sandboxDiv];
-
-
+			
 			var stateColors = [ "#a6a6a6", "#28a328" ];
 			var fillColors = [ "#dedede", "#48c448" ];
 
 			var images = [ "img/asleep-cell-square.svg", "img/awake-cell-square.svg" ];
-
+			var ghostImages = [ "img/asleep-cell-square-ghost.svg", "img/awake-cell-square-ghost.svg" ];
 
 			
 			var i = 0;
 
 			var mainrule = 146;
+
 			
-
-			// var funs = [setupAwakeAsleepIntro,
-			// setupStateTimeGrid,
-			// setupSocialSituations,
-			// setupDiscreteTimeSingleRow,
-			// setupStateTimeGridAnim,
-			// setupExploreNetwork,
-			// setupChangingOfTheStates,
-			// setupSandbox];
-
-			// var activeFunctions = [];
-			// for (var i=0; i<8; i++) {
-			// 	activeFunctions[i] = { active: false, loc: +divs[i].node().getBoundingClientRect().top };
-			// }
-
-			// d3.select(window).on("scroll", function(){
-			// 	console.log(window.pageYOffset);
-			// 	for (var i=0; i<8; i++) {
-			// 		if (!activeFunctions[i].active && window.pageYOffset >= activeFunctions[i].loc) {
-			// 			funs[i](divs[i]);
-			// 			activeFunctions[i].active = true;
-			// 		}
-			// 	}
-			// });
-
-
-			setupAwakeAsleepIntro(awakeasleepintroDiv);
-			setupStateTimeGrid(stateTimeGridDiv);
-			setupSocialSituations(socialSituationsDiv);
-			setupDiscreteTimeSingleRow(discreteTimeSingleRowDiv);
-			setupStateTimeGridAnim(stateTimeGridAnimDiv);
-			setupExploreNetwork(exploreNetworkDiv);
-			setupChangingOfTheStates(changingOfTheStatesDiv);
-			setupSandbox(sandboxDiv);
-
+			
 
 			function setupSandbox(div) {
 
@@ -506,7 +454,6 @@
 
 
 				})
-
 			}
 
 			function setupChangingOfTheStates(div) {
@@ -730,7 +677,6 @@
 						.attr("y", 50)
 						.text("Rule: " + ca.rule())
 						.attr("text-anchor", "middle")
-
 			}
 
 			function setupExploreNetwork(div) {
@@ -921,7 +867,6 @@
 										.attr("fill", "#333")
 							});
 						});
-
 			}
 
 			function setupDiscreteTimeSingleRow(div) {
@@ -1017,9 +962,7 @@
 					}
 					raf = window.requestAnimationFrame(run);
 				}
-
 			}
-
 
 			function setupExploreSimpleNetwork(svg) {
 				var width = 960;
@@ -1181,7 +1124,6 @@
 						
 				// awakeCell.select(".face").remove();
 				// drawAwakeFace(awakeCell, size, awakeLoc);
-
 			}
 
 			function setupCircularNetwork(svg) {
@@ -1264,7 +1206,6 @@
 							.attr("width", size)
 							.attr("height", size)
 							.attr("xlink:href", function(d,i){ return images[d]; });
-
 			}
 
 			function setupStateTimeGrid(div) {
@@ -1330,9 +1271,7 @@
 							.attr("stroke-width", 0.3)
 							// .attr("opacity", t === i ? 1 : 0);
 				})
-				
 			}
-
 
 			function setupStateTimeGridAnim(div) {
 
@@ -1456,7 +1395,6 @@
 					raf = window.requestAnimationFrame(run);
 				}
 			}
-
 
 			function setupSocialSituations(div) {
 
@@ -1646,23 +1584,6 @@
 				  	decRule = basek2dec(arrRule, 2);
 				  	ruletext.text("Rule: " + decRule);
 				  })
-
-				
-				// var xtimes = svg.selectAll(".twos-exp").data([7,6,5,4,3,2,1,0])
-				// 	.enter().append("text")
-				// 		.attr("x", function(a,b){ return 15 + (b * 120) + size + size/2; })
-				// 		.attr("y", 200)
-				//     .attr("font-size", "1em")
-				//     .attr("text-anchor", "middle")
-				//     .text(function(a,b){ return "x"; });
-
-				// var twosExp = svg.selectAll(".twos-exp").data([7,6,5,4,3,2,1,0])
-				// 	.enter().append("text")
-				// 		.attr("x", function(a,b){ return 15 + (b * 120) + size + size/2; })
-				// 		.attr("y", 220)
-				//     .attr("font-size", "1em")
-				//     .attr("text-anchor", "middle")
-				//     .text(function(a,b){ return "2^" + a; });
 			}
 
 
