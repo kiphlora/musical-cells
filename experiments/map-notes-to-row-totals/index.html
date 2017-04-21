@@ -18,7 +18,7 @@
 
 	<div class="header">
 		<p class="main-title">Musical Cells</p>
-		<p class="main-subtitle">Experiment #1 - Mapping Notes to Columns</p>
+		<p class="main-subtitle">Experiment #2 - Mapping Notes to Row Totals</p>
 		<p class="authors">by Brett Moran</p>
 	</div>
 	<div class="container">
@@ -93,19 +93,24 @@
 
 			var numRuns = 120;
 
-			// var notes = ["C2", "C#2", "D2", "Eb2", "E2", "F2", "F#2", "G2", "G#2", "A2", "Bb2", "B2",
+			// var notes = ["rest", "C2", "C#2", "D2", "Eb2", "E2", "F2", "F#2", "G2", "G#2", "A2", "Bb2", "B2",
 			// 						 "C3", "C#3", "D3", "Eb3", "E3", "F3", "F#3", "G3", "G#3", "A3", "Bb3", "B3",
 			// 						 "C4", "C#4", "D4", "Eb4", "E4", "F4", "F#4", "G4", "G#4", "A4", "Bb4", "B4",
 			// 						 "C5", "C#5", "D5", "Eb5", "E5", "F5", "F#5", "G5", "G#5", "A5", "Bb5", "B5",
 			// 						 "C6", "C#6", "D6", "Eb6", "E6", "F6", "F#6", "G6", "G#6", "A6", "Bb6", "B6",
 			// 						 "C7", "C#7", "D7", "Eb7", "E7", "F7", "F#7", "G7", "G#7", "A7", "Bb7", "B7"];
 
-			var notes = ["C4", "C#4", "D4", "Eb4", "E4", "F4", "F#4", "G4", "G#4", "A4", "Bb4", "B4"];
+			var notes = ["rest", "C3", "C#3", "D3", "Eb3", "E3", "F3", "F#3", "G3", "G#3", "A3", "Bb3", "B3",
+									 "C4", "C#4", "D4", "Eb4", "E4", "F4", "F#4", "G4", "G#4", "A4", "Bb4", "B4",
+									 "C5", "C#5", "D5", "Eb5", "E5", "F5", "F#5", "G5", "G#5", "A5", "Bb5", "B5"];	
 
-			var ca = TCA(1,2).numCells(200).rule(110).run(numRuns);
+
+			// var notes = ["rest", "C4", "C#4", "D4", "Eb4", "E4", "F4", "F#4", "G4", "G#4", "A4", "Bb4", "B4"];
+
+			var ca = CA(3,2).numCells(200).rule(110).run(numRuns);
 
 			var gens = ca.cellStates();
-			var tempo = 90;
+			var tempo = 180;
 			var conductor = new BandJS();
 			conductor.setTimeSignature(4,4);
 			conductor.setTempo(tempo);
@@ -282,25 +287,39 @@
 					conductor.setTimeSignature(4,4);
 					conductor.setTempo(tempo);
 					var piano = conductor.createInstrument();
+
 					gens = ca.cellStates();
+
+					var rowTotals = [];
+
 					var allMeasures = [];
+
 					for (var i=0; i<gens.length; i++) {
-						var notelist = [];
-						var g = gens[i];
-						for (var j=0; j<g.length; j++) {
-							var k = +g[j];
-							if (k === 1) notelist.push(notes[j%notes.length]);
-						}
-						notelist = notelist.join();
-						console.log(notelist);
-						allMeasures.push(notelist);
-						// piano.note("quarter", )
+						rowTotals[i] = sum(gens[i]) % notes.length;
+						allMeasures[i] = notes[rowTotals[i]];
 					}
+					// for (var i=0; i<gens.length; i++) {
+					// 	rowTotals[i] = sum(gens[i]);
+					// 	var notelist = [];
+					// 	var g = gens[i];
+					// 	for (var j=0; j<g.length; j++) {
+					// 		var k = +g[j];
+					// 		if (k === 1) notelist.push(notes[j%notes.length]);
+					// 	}
+					// 	notelist = notelist.join();
+					// 	// console.log(notelist);
+					// 	allMeasures.push(notelist);
+					// 	// piano.note("quarter", )
+					// }
 
 					for (var i=0; i<allMeasures.length; i++) {
-						piano.note("eighth", allMeasures[i]);
+						if (allMeasures[i] === "rest") piano.rest("quarter");
+						else piano.note("eighth", allMeasures[i]);
 					}
 					player = conductor.finish();
+
+					console.log(rowTotals.join());
+					// console.log(vecOp(rowTotals, function(d){ return d / ca.numCells(); }))
 					player.play();
 				});
 
